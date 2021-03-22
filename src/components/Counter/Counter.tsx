@@ -1,20 +1,27 @@
 import React from "react";
 import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
-import { decrement, increment } from "../../redux-toolkit/reduxToolkit";
+import { useAppDispatch, useAppSelector } from "../../App/hooks";
+import { decrement, increment } from "../../features/counter/counterSlice";
 import style from "./counter.module.scss";
 
 const Counter = () => {
-  const dispatch = useDispatch();
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
 
-  const count = useSelector((state: RootStateOrAny) => state.toolkit.counter);
+  const onIncrement = () => {
+    dispatch(increment());
+  };
+  const onDecrement = () => {
+    dispatch(decrement());
+  };
 
   return (
     <div className={style.test}>
-      <button className={style.btn} onClick={() => dispatch(increment())}>
+      <button className={style.btn} onClick={onIncrement}>
         +
       </button>
       <span>{count}</span>
-      <button className={style.btn} onClick={() => dispatch(decrement())}>
+      <button className={style.btn} onClick={onDecrement}>
         -
       </button>
     </div>
