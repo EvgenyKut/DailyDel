@@ -1,5 +1,4 @@
 import React from "react";
-import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../../App/hooks";
 import { decrement, increment } from "../../features/counter/counterSlice";
 import style from "./counter.module.scss";
