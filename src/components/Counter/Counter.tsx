@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../App/hooks";
-import { decrement, increment } from "../../features/counter/counterSlice";
+import { decrement, increment } from "../../features/reducers/counterSlice";
 import style from "./counter.module.scss";
 
 const Counter = () => {

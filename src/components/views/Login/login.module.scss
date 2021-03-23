@@ -1,0 +1,38 @@
+.loginBox {
+    position: relative;
+  
+  }
+  
+  .loginBtn {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+  }
+  
+  .logo {
+    height: 36px;
+    width: 36px;
+    background-image: url("../../../images/Logo.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 52px;
+    left: 145px;
+  }
+  
+  .form{
+      position: absolute;
+      top: 137px;
+      left: 30px;
+  }
+  
+  .inputLogin{
+      margin-bottom: 16px;
+  }
+
+  .links{
+      position: absolute;
+      top: 301px;
+      right: 30px;
+  }
