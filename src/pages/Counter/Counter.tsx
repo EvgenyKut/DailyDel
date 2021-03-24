@@ -1,10 +1,10 @@
 import React from "react";
 import { decrement, increment } from "./counterSlice";
-import { RootState, useAppDispatch, useAppSelector } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import styles from "./styles.module.scss";
 
 const Counter = () => {
-  const count = useAppSelector((state: RootState) => state.counter.value);
+  const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
 
   const onIncrement = () => {
