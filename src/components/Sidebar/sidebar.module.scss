@@ -1,0 +1,82 @@
+.sidebar {
+  height: 100vh;
+  width: 96px;
+  background-color: #ffffff;
+  border-radius: 0px 20px 20px 0px;
+  position: absolute;
+  left: 0;
+}
+
+.logo {
+  height: 36px;
+  width: 36px;
+  background-image: url("../../images/Logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 40px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.line {
+  height: 1px;
+  width: 70px;
+  background: #000000;
+  opacity: 0.2;
+  border-radius: 71.5px;
+  margin-left: 13px;
+  margin-top: 30px;
+}
+
+.icon {
+  height: 26px;
+  width: 26px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 35px;
+  cursor: pointer;
+}
+.iconMan {
+  background-image: url("../../images/Man.svg");
+  margin-top: 37.17px;
+}
+
+.iconDownload {
+  background-image: url("../../images/Download.svg");
+  margin-top: 8vh;
+}
+
+.iconZip {
+  background-image: url("../../images/ZIP.svg");
+  margin-top: 8vh;
+}
+
+.iconImage {
+  background-image: url("../../images/Image.svg");
+  margin-top: 8vh;
+}
+
+.iconTask {
+  background-image: url("../../images/Task.svg");
+  margin-top: 8vh;
+}
+
+.iconFire {
+  background-image: url("../../images/Fire.svg");
+  margin-top: 8vh;
+}
+
+.iconDiagram {
+  background-image: url("../../images/Diagram.svg");
+  margin-top: 8vh;
+  margin-left: 35px;
+}
+
+.gear {
+  position: absolute;
+  background-image: url("../../images/Gear.svg");
+  bottom: 37.16px;
+
+}

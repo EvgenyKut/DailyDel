@@ -1,5 +1,4 @@
 import React from "react";
-import Counter from "../components/Counter";
 import style from "./app.module.scss";
 // import { store } from "../redux-toolkit/";
 import { store } from "./store";

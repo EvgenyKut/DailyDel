@@ -14,7 +14,6 @@ export const loginSlice = createSlice({
     inputLogin: (state, action: PayloadAction<string>) =>
       void(state.value = action.payload),
       //?  void  - так указано в документации Immer
-
   },
 });
 

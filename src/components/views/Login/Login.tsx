@@ -3,7 +3,6 @@ import Button from "../../Button";
 import Input from "../../Input";
 import LoginBox from "../../LoginBox";
 import style from "./login.module.scss";
-import { Link } from "react-router-dom";
 import SLink from "../../SLink";
 
 const Login = () => {

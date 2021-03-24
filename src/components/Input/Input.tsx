@@ -1,16 +1,16 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../App/hooks";
+import { useAppDispatch } from "../../App/hooks";
 import { inputLogin } from "../../features/reducers/loginSlice";
 import { inputPassword } from "../../features/reducers/passwordSlice";
+
 import style from "./input.module.scss";
 
 type InputProps = {
-  type: "login"|"password"
+  type: "login" | "password";
   placeholder: string;
 };
 
-const Input: React.FC<InputProps> = ({ type, placeholder, }) => {
-
+const Input: React.FC<InputProps> = ({ type, placeholder }) => {
   const dispatch = useAppDispatch();
 
   const onInputL = (e: any) => {
@@ -20,13 +20,13 @@ const Input: React.FC<InputProps> = ({ type, placeholder, }) => {
   const onInputP = (e: any) => {
     dispatch(inputPassword(e.target.value));
   };
-const t = type==="login"? onInputL: onInputP;
+  const onInput = type === "login" ? onInputL : onInputP;
 
   return (
     <input
       className={style.input}
       placeholder={placeholder}
-      onChange={(e) => t(e)}
+      onChange={(e) => onInput(e)}
     />
   );
 };
