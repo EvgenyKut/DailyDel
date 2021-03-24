@@ -13,11 +13,11 @@ type InputProps = {
 const Input: React.FC<InputProps> = ({ type, placeholder }) => {
   const dispatch = useAppDispatch();
 
-  const onInputL = (e: any) => {
+  const onInputL = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(inputLogin(e.target.value));
   };
 
-  const onInputP = (e: any) => {
+  const onInputP = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(inputPassword(e.target.value));
   };
   const onInput = type === "login" ? onInputL : onInputP;
