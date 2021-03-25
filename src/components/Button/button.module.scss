@@ -16,3 +16,21 @@
     background-color: rgba(92, 88, 172, 0.8);
   }
 }
+
+.primary {
+}
+
+.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: #4339f2;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: Arial;
+  text-align: right;
+}

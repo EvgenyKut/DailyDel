@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./app.module.scss";
-// import { store } from "../redux-toolkit/";
 import { store } from "./store";
 import { Provider } from "react-redux";
 import {
@@ -9,7 +8,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import Login from "../components/views/Login/Login";
+import Login from "../views/Login/Login";
 import Test from "../pages/Test";
 
 const App = () => {

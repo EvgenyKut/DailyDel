@@ -1,13 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from "../features/reducers/counterSlice";
-import loginSlice from "../features/reducers/loginSlice";
-import passwordSlice from "../features/reducers/passwordSlice";
+import formSlice from "../views/Login/formSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterSlice,
-    loginform: loginSlice,
-    passwordform:passwordSlice,
+    form: formSlice,
   },
 });
 

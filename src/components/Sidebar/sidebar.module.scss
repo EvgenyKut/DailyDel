@@ -15,8 +15,18 @@
   background-repeat: no-repeat;
   background-position: center;
   margin-top: 40px;
-  margin-left: 30px;
+  margin-left: 17px;
   cursor: pointer;
+}
+
+.logoCover {
+  width: 70px;
+  height: 66px;
+  margin-left: 13px;
+  border-bottom: 1px solid #cccccc;
+  &::after {
+    border-radius: 71px;
+  }
 }
 
 .line {
@@ -38,6 +48,7 @@
   margin-left: 35px;
   cursor: pointer;
 }
+
 .iconMan {
   background-image: url("../../images/Man.svg");
   margin-top: 4vh;
@@ -71,7 +82,6 @@
 .iconDiagram {
   background-image: url("../../images/Diagram.svg");
   margin-top: 7vh;
-  margin-left: 35px;
 }
 
 .gear {
