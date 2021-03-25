@@ -10,10 +10,11 @@ type BtnProps = {
   theme?: string;
   disabled?: boolean;
   link?: string;
+  scale?: "large"|"small"
 };
 
-const Button: React.FC<BtnProps> = ({ label, theme, disabled, link }) => {
-  const btnClasses = cx(style.btn, { disabled: disabled });
+const Button: React.FC<BtnProps> = ({ label, theme, disabled, link, scale }) => {
+  const btnClasses = cx(style.btn, { dis: disabled, [`${scale}`]:scale });
   const linkClasses = cx(style.link);
 
   if (link) {

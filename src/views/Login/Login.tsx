@@ -29,9 +29,9 @@ const Login = () => {
   const renderForm = () => {
     return forms.map((form) => {
       return (
-        <div className={style.formItem}>
+        <li className={style.formItem} key={form.id}>
           <Input placeholder={form.placeholder} onInput={form.onInput} />
-        </div>
+        </li>
       );
     });
   };
@@ -40,7 +40,9 @@ const Login = () => {
     <div className={style.loginBox}>
       <LoginBox />
       <div className={style.logo}></div>
-      <form className={style.form}>{renderForm()}</form>
+      <form className={style.form}>
+        <ul>{renderForm()}</ul>
+      </form>
       <div className={style.links}>
         <Button link={"/test"} label={"Don’t have account?"} />
         <Button link={"/test"} label={"Forget your password?"} />
