@@ -10,13 +10,17 @@ type BtnProps = {
   theme?: string;
   disabled?: boolean;
   link?: string;
-  scale?: "large"|"small"
+  scale?: "large"|"small";
+  type?:"submit";
+  preloader?: string;
 };
 
-const Button: React.FC<BtnProps> = ({ label, theme, disabled, link, scale }) => {
+const Button: React.FC<BtnProps> = ({ label, theme, disabled, link, scale, type,preloader }) => {
   const btnClasses = cx(style.btn, { dis: disabled, [`${scale}`]:scale });
   const linkClasses = cx(style.link);
 
+
+const btnContent = preloader? preloader : label;
   if (link) {
     return (
       <Link to={`${link}`} className={linkClasses}>
@@ -24,7 +28,7 @@ const Button: React.FC<BtnProps> = ({ label, theme, disabled, link, scale }) => 
       </Link>
     );
   }
-  return <button className={btnClasses}>{label}</button>;
+  return <button className={btnClasses} type={type}>{btnContent}</button>;
 };
 
 export default Button;

@@ -1,47 +1,62 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import style from "./sidebar.module.scss";
-const Sidebar = () => {
+import man from "../../images/Man.svg";
+import download from "../../images/Download.svg";
+import zip from "../../images/ZIP.svg";
+import image from "../../images/Image.svg";
+import task from "../../images/Task.svg";
+import fire from "../../images/Fire.svg";
+import diagram from "../../images/Diagram.svg";
+
+interface BaseProps {}
+const Sidebar = ({ children }: PropsWithChildren<BaseProps>) => {
   const links = [
     {
       id: 1,
-      url: "../../images/Man.svg",
+      image: man,
       title: "iconMan",
-      href: "#",
+      href: "/login",
     },
     {
       id: 2,
-      url: "../../images/Download.svg",
+      image: download,
       title: "iconDownload",
-      href: "#",
+      href: "/test2",
     },
-    { id: 3, url: "../../images/ZIP.svg", title: "iconZip", href: "#" },
-    { id: 4, url: "../../images/Image.svg", title: "iconImage", href: "#" },
-    { id: 5, url: "../../images/Task.svg", title: "iconTask", href: "#" },
-    { id: 6, url: "../../images/Fire.svg", title: "iconFire", href: "#" },
-    { id: 7, url: "../../images/Diagram.svg", title: "iconDiagram", href: "#" },
+    { id: 3, image: zip, title: "iconZip", href: "/test" },
+    { id: 4, image: image, title: "iconImage", href: "#" },
+    { id: 5, image: task, title: "iconTask", href: "#" },
+    { id: 6, image: fire, title: "iconFire", href: "#" },
+    { id: 7, image: diagram, title: "iconDiagram", href: "#" },
   ];
 
   const renderIcons = () => {
     return links.map((link) => {
-      const iconStyle = style[link.title];
       return (
         <li key={link.id}>
           <a href={link.href}>
-            <div className={`${iconStyle} ${style.icon}`}></div>
+            <div
+              className={style.icon}
+              style={{ backgroundImage: `url(${link.image})` }}
+            ></div>
           </a>
-          {/* <img className={style.icon} src={link.url} alt={link.title}/> */}
         </li>
       );
     });
   };
   return (
-    <div className={style.sidebar}>
-      <div className={style.logoCover}>
-        <div className={style.logo}></div>
-        {/* <div className={style.line}></div> */}
+    <div className={style.container}>
+      <div className={style.sidebar}>
+        <div>
+          {/* <div className={style.logoCover}> */}
+            <div className={style.logo}></div>
+            <div className={style.line}></div>
+          {/* </div> */}
+          <ul className={style.icons}>{renderIcons()}</ul>
+          <div className={`${style.gear} ${style.icon}`}></div>
+        </div>
       </div>
-      <ul className={style.icons}>{renderIcons()}</ul>
-      <div className={`${style.gear} ${style.icon}`}></div>
+      {children}
     </div>
   );
 };

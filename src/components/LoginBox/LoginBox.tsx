@@ -1,12 +1,10 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import style from "./loginbox.module.scss";
 
-const LoginBox = () => {
-  return (
-    <div className={style.loginBox}>
-      {/* <div className={style.logo}></div> */}
-    </div>
-  );
+interface LoginProps {}
+
+const LoginBox = ({ children }: PropsWithChildren<LoginProps>) => {
+  return <div className={style.loginBox}>{children}</div>;
 };
 
 export default LoginBox;

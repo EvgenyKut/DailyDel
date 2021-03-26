@@ -8,20 +8,27 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import Login from "../views/Login/Login";
+import Login from "../pages/Login";
+import CreateAccount from "../pages/CreateAccount";
 import Test from "../pages/Test";
+import Test2 from "../pages/Test2";
+import Sidebar from "../components/Sidebar";
 
 const App = () => {
   return (
     <div className={style.container}>
       <Provider store={store}>
-        <Router>
-          <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/test" component={Test} />
-            <Redirect from="/" to="/login" />
-          </Switch>
-        </Router>
+        <Sidebar>
+          <Router>
+            <Switch>
+              <Route path="/login" component={Login} />
+              <Route path="/createLogin" component={CreateAccount} />
+              <Route path="/test" component={Test} />
+              <Route path="/test2" component={Test2} />
+              <Redirect from="/" to="/login" />
+            </Switch>
+          </Router>
+        </Sidebar>
       </Provider>
     </div>
   );

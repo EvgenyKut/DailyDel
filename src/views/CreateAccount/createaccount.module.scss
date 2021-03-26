@@ -23,14 +23,13 @@
 }
 
 .form {
-  
+  display: flex;
   margin-left: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 30px;flex-direction: column;
 }
 
 .inputs{
-  margin-bottom: 67px;
-  position: relative;
+  margin-bottom: 17px;
 }
 
 .formItem{
@@ -39,6 +38,9 @@
 
 .downSector{
   display: flex;
+  justify-content: center;
+  margin-left: -30px;
+  position:relative;
 }
 
 .links {
@@ -46,12 +48,3 @@
   margin-left: 29px;
 }
 
-.eye{
-  position: absolute;
-  height: 26px;
-  width: 36px;
-  left:220px;
-  top:65px;
-  cursor: pointer;
-  opacity:0.3;
-}
