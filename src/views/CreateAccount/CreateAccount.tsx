@@ -24,6 +24,8 @@ const Login = () => {
   const [passwordCopyError, setPasswordCopyError] = useState("");
   const [formValid, setFormValid] = useState(false);
   const [btnContent, setBtnContent] = useState("Login");
+  const [loader, setLoader] = useState(false);
+
   const errors: any = {
     name: nameError,
     password: passwordError,
@@ -82,7 +84,7 @@ const Login = () => {
   const onInputPasswordCopy = (e: React.ChangeEvent<HTMLInputElement>) => {
     const event = e.target.value;
     setPasswordCopy(event);
-    if (event !== password ) {
+    if (event !== password) {
       setPasswordCopyError("Passwords must match");
     } else {
       setPasswordCopyError("");
@@ -155,25 +157,33 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (loginError || passwordError || passwordCopyError || nameError) {
-      setFormValid(false);
-    } else {
+    if (
+      login &&
+      password &&
+      name &&
+      passwordCopy &&
+      passwordCopy === password
+    ) {
       setFormValid(true);
+    } else {
+      setFormValid(false);
     }
-  }, [loginError, passwordError, passwordCopyError, nameError]);
+  }, [login, name, password, passwordCopy]);
 
   const onSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    setBtnContent("wait...");
+    setBtnContent("");
     setFormValid(false);
+    setLoader(true);
     setTimeout(() => {
-      console.log("login :", login, " password :", password, "name: ",name);
+      console.log("login :", login, " password :", password, "name: ", name);
       setBtnContent("Login");
       setLogin("");
       setPassword("");
       setPasswordCopy("");
       setName("");
       setFormValid(true);
+      setLoader(false);
       history.push("/login");
     }, 3000);
   };
@@ -185,7 +195,11 @@ const Login = () => {
         <form className={style.form} onSubmit={(e: any) => onSubmit(e)}>
           <ul className={style.inputs}>{renderForm()}</ul>
           <div className={style.downSector}>
-            <Button label={btnContent} disabled={!formValid} />
+            <Button
+              label={btnContent}
+              disabled={!formValid}
+              preloader={loader}
+            />
           </div>
         </form>
       </LoginBox>

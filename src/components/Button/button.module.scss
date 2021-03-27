@@ -12,6 +12,9 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 20px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
   &:active {
     background-color: rgba(92, 88, 172, 0.8);
   }
@@ -43,4 +46,15 @@
 .small{
   width: 50px;
   height:30px;
+}
+
+.loader{
+    width: 40px;
+    height: 40px;
+    background-image: url("../../images/Spinner.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
 }
