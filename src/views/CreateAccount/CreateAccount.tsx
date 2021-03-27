@@ -71,10 +71,7 @@ const Login = () => {
     setPassword(event);
     if (event.length < 3 || event.length > 8) {
       setPasswordError("Uncorrect password");
-    } else {
-      setPasswordError("");
-    }
-    if (event !== passwordCopy && passwordCopyDirty) {
+    } else if (event !== passwordCopy && passwordCopyDirty) {
       setPasswordError("Passwords must match");
     } else {
       setPasswordError("");
