@@ -67,7 +67,7 @@ const Login = () => {
 
   const forms: any = [
     {
-      id: 1,
+      id: "21",
       title: "login",
       value: login,
       placeholder: "Login",
@@ -75,7 +75,7 @@ const Login = () => {
       type: "text",
     },
     {
-      id: "23",
+      id: "22",
       title: "password",
       value: password,
       placeholder: "Password",
@@ -87,21 +87,20 @@ const Login = () => {
     return forms.map((form: any) => {
       return (
         <li className={style.formItem} key={form.id}>
+          <Input
+            name={form.title}
+            placeholder={form.placeholder}
+            onChange={form.onInput}
+            onBlur={blurHandler}
+            value={form.value}
+            type={form.type}
+            id={form.id}
+          />
           {errors[`${form.title}`] && dirties[`${form.title}`] && (
-            <div style={{ color: "red" }}>{errors[`${form.title}`]}</div>
+            <div id={form.id + "3"} style={{ color: "red", fontSize: "10px" }}>
+              {errors[`${form.title}`]}
+            </div>
           )}
-          <div>
-           
-            <Input
-              name={form.title}
-              placeholder={form.placeholder}
-              onChange={form.onInput}
-              onBlur={blurHandler}
-              value={form.value}
-              type={form.type}
-              id={form.id}
-            />
-          </div>
         </li>
       );
     });
@@ -131,21 +130,30 @@ const Login = () => {
   const [eyeState, setEyestate] = useState(false);
   const toggle = () => {
     if (!eyeState) {
-      document.getElementById("23")?.setAttribute("type", "text");
+      document.getElementById("22")?.setAttribute("type", "text");
       document.getElementById("eye2")?.setAttribute("src", slashEye);
 
       setEyestate(true);
     } else {
-      document.getElementById("23")?.setAttribute("type", "password");
+      document.getElementById("22")?.setAttribute("type", "password");
       document.getElementById("eye2")?.setAttribute("src", openEye);
       setEyestate(false);
     }
   };
 
-  if (passwordError === "Uncorrect password") {
-    const gg = document.getElementById("eye");
-    if (gg !== null) {
-      gg.style.top = "80px";
+
+
+  const eyeOnPage= document.getElementById("eye");
+
+  const firstForm = document.getElementById("213");
+  if (firstForm) {
+    if (eyeOnPage !== null) {
+      eyeOnPage.style.top="73px"
+    }
+    
+  } else {
+    if ( eyeOnPage !== null) {
+      eyeOnPage.style.top="65px"
     }
   }
 
@@ -153,7 +161,11 @@ const Login = () => {
     <div className={style.loginBox}>
       <LoginBox>
         <div className={style.logo}></div>
-        <form className={style.form} onSubmit={(e: any) => onSubmit(e)}>
+        <form
+          className={style.form}
+          onSubmit={(e: any) => onSubmit(e)}
+          id={"24"}
+        >
           <ul className={style.inputs}>
             {renderForm()}
             <div className={style.eye} onClick={toggle} id={"eye"}>

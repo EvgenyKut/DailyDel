@@ -73,7 +73,7 @@ const Login = () => {
       setPasswordError("");
     }
     if (event !== passwordCopy && passwordCopyDirty) {
-      setPasswordError("Passwords don't match");
+      setPasswordError("Passwords must match");
     } else {
       setPasswordError("");
     }
@@ -83,7 +83,7 @@ const Login = () => {
     const event = e.target.value;
     setPasswordCopy(event);
     if (event !== password ) {
-      setPasswordCopyError("Passwords don't match");
+      setPasswordCopyError("Passwords must match");
     } else {
       setPasswordCopyError("");
     }
